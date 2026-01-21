@@ -2,6 +2,12 @@
   "name": "tasking-map-viewer",
   "displayName": "TASKING Map File Viewer",
   "description": "Viewer for TASKING VX-toolset linker map files",
+  "publisher": "IH02",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IH02/vscode-Tasking-map.git"
+  },
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.80.0"
@@ -36,11 +42,11 @@
     "commands": [
       {
         "command": "taskingMap.goToSymbol",
-        "title": "TASKING: Go to Symbol in MAP"
+        "title": "Map File Viewer: Go to Symbol in MAP"
       },
       {
         "command": "taskingMap.selectMapFile",
-        "title": "TASKING: Select MAP File"
+        "title": "Map File Viewer: Select MAP File"
       }
     ],
     "keybindings": [
