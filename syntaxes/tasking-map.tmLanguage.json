@@ -1,0 +1,59 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "TASKING Map File",
+  "scopeName": "source.tasking-map",
+  "patterns": [
+    {
+      "name": "comment.line.asterisk.tasking-map",
+      "match": "^\\*+.*$"
+    },
+    {
+      "name": "keyword.control.section.tasking-map",
+      "match": "\\b(Tool and Invocation|Used Resources|Processed Files|Link Result|Cross References|Call Graph|Overlay|Locate Result|Locate Rules|Removed Sections|Memory usage|Space usage|Estimated stack usage|Symbols|Sections|Task entry address)\\b"
+    },
+    {
+      "name": "constant.numeric.hex.tasking-map",
+      "match": "\\b0x[0-9a-fA-F]+\\b"
+    },
+    {
+      "name": "constant.numeric.tasking-map",
+      "match": "\\b[0-9]+\\b"
+    },
+    {
+      "name": "storage.type.memory.tasking-map",
+      "match": "\\b(spe:pflash|spe:dsram|spe:brom|spe:dflash|spe:dpram|spe:pcode|spe:pram|spe:spram|spe:sram|xram|spe:tc:linear|spe:tc:abs18|spe:tc:abs24|spe:tc:csa|spe:tc:pcp_code|spe:tc:pcp_data)\\b"
+    },
+    {
+      "name": "entity.name.type.section.tasking-map",
+      "match": "\\.(text|data|bss|rodata|zrodata|zdata|zbss)"
+    },
+    {
+      "name": "string.quoted.section.tasking-map",
+      "match": "\\.[a-zA-Z_][a-zA-Z0-9_.]*"
+    },
+    {
+      "name": "variable.parameter.file.tasking-map",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\.o\\b"
+    },
+    {
+      "name": "variable.parameter.archive.tasking-map",
+      "match": "\\blib[a-zA-Z0-9_]+\\.a\\b"
+    },
+    {
+      "name": "markup.bold.table-header.tasking-map",
+      "match": "^\\+[-+]+\\+$"
+    },
+    {
+      "name": "punctuation.separator.table.tasking-map",
+      "match": "\\|"
+    },
+    {
+      "name": "keyword.operator.tasking-map",
+      "match": "(Code|Data|Reserved|Free|Total|Native used Rom|Native used Ram|Space addr|Chip addr|Size|Alignment)"
+    },
+    {
+      "name": "support.function.tasking-map",
+      "match": "\\b_[a-zA-Z_][a-zA-Z0-9_]*\\b"
+    }
+  ]
+}

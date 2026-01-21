@@ -1,0 +1,79 @@
+{
+  "name": "tasking-map-viewer",
+  "displayName": "TASKING Map File Viewer",
+  "description": "Viewer for TASKING VX-toolset linker map files",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Visualization"
+  ],
+  "activationEvents": [
+    "onLanguage:c",
+    "onLanguage:cpp",
+    "onCommand:taskingMap.goToSymbol",
+    "onCommand:taskingMap.selectMapFile"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "tasking-map",
+        "aliases": ["TASKING Map", "tasking-map"],
+        "extensions": [".map"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tasking-map",
+        "scopeName": "source.tasking-map",
+        "path": "./syntaxes/tasking-map.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "taskingMap.goToSymbol",
+        "title": "TASKING: Go to Symbol in MAP"
+      },
+      {
+        "command": "taskingMap.selectMapFile",
+        "title": "TASKING: Select MAP File"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "taskingMap.goToSymbol",
+        "key": "ctrl+alt+m"
+      }
+    ],
+    "configuration": {
+      "title": "TASKING Map Viewer",
+      "properties": {
+        "taskingMap.hover.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable hover for TASKING map symbols."
+        }
+      }
+    },
+    "views": {}
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "typescript": "^5.1.6"
+  }
+}
