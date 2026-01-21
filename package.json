@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/IH02/vscode-Tasking-map.git"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -27,8 +27,13 @@
     "languages": [
       {
         "id": "tasking-map",
-        "aliases": ["TASKING Map", "tasking-map"],
-        "extensions": [".map"],
+        "aliases": [
+          "TASKING Map",
+          "tasking-map"
+        ],
+        "extensions": [
+          ".map"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
