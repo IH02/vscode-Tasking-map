@@ -3,12 +3,13 @@
   "displayName": "TASKING Map File Viewer",
   "description": "Viewer for TASKING VX-toolset linker map files",
   "publisher": "IH02",
+  "icon": "images/icon.png",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
     "url": "https://github.com/IH02/vscode-Tasking-map.git"
   },
-  "version": "0.1.1",
+  "version": "0.1.3",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -32,7 +33,8 @@
           "tasking-map"
         ],
         "extensions": [
-          ".map"
+          ".map",
+          ".xmap"
         ],
         "configuration": "./language-configuration.json"
       }
@@ -56,21 +58,41 @@
     ],
     "keybindings": [
       {
-        "command": "taskingMap.goToSymbol",
-        "key": "ctrl+alt+m"
+        "command": "taskingMap.selectMapFile",
+        "key": "ctrl+alt+m",
+        "when": "!config.taskingMap.highlightOnly"
       }
     ],
     "configuration": {
       "title": "TASKING Map Viewer",
       "properties": {
-        "taskingMap.hover.enabled": {
+        "taskingMap.highlightOnly": {
           "type": "boolean",
-          "default": true,
-          "description": "Enable hover for TASKING map symbols."
+          "default": false,
+          "description": "Enable highlight-only mode (disable parser-based features)."
         }
       }
     },
-    "views": {}
+    "views": {},
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "taskingMap.goToSymbol",
+          "when": "!config.taskingMap.highlightOnly"
+        },
+        {
+          "command": "taskingMap.selectMapFile",
+          "when": "!config.taskingMap.highlightOnly"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "taskingMap.goToSymbol",
+          "group": "navigation@1",
+          "when": "!config.taskingMap.highlightOnly && editorTextFocus && (editorLangId == c || editorLangId == cpp)"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

@@ -4,12 +4,12 @@
   "scopeName": "source.tasking-map",
   "patterns": [
     {
-      "name": "comment.line.asterisk.tasking-map",
-      "match": "^\\*+.*$"
-    },
-    {
       "name": "keyword.control.section.tasking-map",
       "match": "\\b(Tool and Invocation|Used Resources|Processed Files|Link Result|Cross References|Call Graph|Overlay|Locate Result|Locate Rules|Removed Sections|Memory usage|Space usage|Estimated stack usage|Symbols|Sections|Task entry address)\\b"
+    },
+    {
+      "name": "comment.line.asterisk.tasking-map",
+      "match": "^\\*{5,}.*$"
     },
     {
       "name": "constant.numeric.hex.tasking-map",
